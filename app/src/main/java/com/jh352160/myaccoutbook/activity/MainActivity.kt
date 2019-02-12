@@ -10,6 +10,11 @@ import com.jh352160.myaccoutbook.util.saveStringToSP
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    companion object {
+        val REQUEST_USER_SETTING = 1
+        val REQUEST_EXPEND = 2
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -30,14 +35,23 @@ class MainActivity : AppCompatActivity() {
         saveStringToSP("lastTimeDay", "$currentDay")
         saveStringToSP("lastTimeMoney", "$currentMoney")
 
+        initClick()
+    }
+
+    private fun initClick() {
         btn_change_daily_money.setOnClickListener {
-            startActivityForResult(Intent(this, EditUserSettingActivity::class.java), 1)
+            startActivityForResult(Intent(this, EditUserSettingActivity::class.java), REQUEST_USER_SETTING)
+        }
+
+        btn_expend.setOnClickListener {
+            startActivityForResult(Intent(this, ExpendActivity::class.java), REQUEST_EXPEND)
         }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == 1 && resultCode == Activity.RESULT_OK){
+        if ((requestCode == REQUEST_USER_SETTING || requestCode == REQUEST_EXPEND)
+                && resultCode == Activity.RESULT_OK){
             tv_available_money.text = "${getStringToSP("lastTimeMoney", "0")}"
         }
     }

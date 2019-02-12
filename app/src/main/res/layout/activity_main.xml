@@ -40,4 +40,14 @@
         android:layout_marginTop="10dp"
         android:text="修改用户设置"/>
 
+    <Button
+        android:id="@+id/btn_expend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_change_daily_money"
+        android:layout_marginTop="10dp"
+        android:text="支出"/>
+
 </android.support.constraint.ConstraintLayout>
