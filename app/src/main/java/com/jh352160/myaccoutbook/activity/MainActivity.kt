@@ -24,7 +24,8 @@ class MainActivity : AppCompatActivity() {
         val dailyMoney = getStringToSP("dailyMoney", "0")!!
 
         var currentMoney = 0
-        val currentDay = System.currentTimeMillis() / 1000 / 60 / 60 / 24
+        //需要补上8个小时来匹配北京时间
+        val currentDay = System.currentTimeMillis() / 1000 / 60 / 60 / 24 + 8 * 1000 * 60 * 60
         if (lastTimeDay != "") {
             val diffDay = currentDay.toInt() - lastTimeDay.toInt()
             currentMoney = lastTimeMoney.toInt() + (diffDay * dailyMoney.toInt())
