@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginLeft="20dp"
         android:hint="请输入可用金额"
-        />
+        android:inputType="number"/>
 
     <TextView
         android:id="@+id/tv_daily_money_text"
@@ -44,6 +44,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:hint="请输入每日金额"
+        android:inputType="number"
         />
 
     <Button
