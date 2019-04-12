@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.jh352160.myaccoutbook" >
 
+    <!-- Required to provide the web interface -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Required to run keep-alive service when targeting API 28 or higher -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,7 +25,9 @@
         </activity>
         <activity android:name=".activity.EditUserSettingActivity" />
         <activity android:name=".activity.ExpendActivity" />
-        <activity android:name=".activity.AddPlanTypeActivity" />
+        <activity android:name=".activity.AddPlanTypeActivity" >
+
+        </activity>
         <activity android:name=".activity.PlanTypeListActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
