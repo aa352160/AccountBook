@@ -33,7 +33,7 @@ class PlanTypeDetailActivity : AppCompatActivity() {
 
     private fun refreshList(){
         val typeId = intent.getLongExtra("typeId", 0)
-        val planItemList = planItemBox.query().equal(PlanItemB_.id, typeId).build().find()
+        val planItemList = planItemBox.query().equal(PlanItemB_.typeId, typeId).build().find()
         recycler_view.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recycler_view.adapter = PlanItemListAdapter(planItemList as ArrayList<PlanItemB>)
     }
