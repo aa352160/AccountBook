@@ -1,12 +1,12 @@
 package com.jh352160.myaccoutbook.adapter
 
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.SimpleAdapter
 import com.jh352160.myaccoutbook.R
+import com.jh352160.myaccoutbook.activity.PlanTypeDetailActivity
 import com.jh352160.myaccoutbook.bean.PlanTypeB
 import kotlinx.android.synthetic.main.item_plan_type_list.view.*
 
@@ -22,6 +22,9 @@ class PlanTypeListAdapter(val datas: ArrayList<PlanTypeB>) : RecyclerView.Adapte
         val item = datas[position]
         with(viewHolder.itemView){
             tv_type_name.text = item.name
+            setOnClickListener { context.startActivity(Intent(context, PlanTypeDetailActivity::class.java).apply {
+                putExtra("typeId", item.id)
+            }) }
         }
     }
 

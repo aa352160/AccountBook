@@ -22,9 +22,37 @@
         }
       ],
       "relations": []
+    },
+    {
+      "id": "2:6407144915364968380",
+      "lastPropertyId": "6:7151162725843014034",
+      "name": "PlanItemB",
+      "properties": [
+        {
+          "id": "1:5718099847180862989",
+          "name": "id"
+        },
+        {
+          "id": "2:1054770328373461264",
+          "name": "typeId"
+        },
+        {
+          "id": "3:6170652253079403652",
+          "name": "spendMoney"
+        },
+        {
+          "id": "4:3835658343109529262",
+          "name": "remark"
+        },
+        {
+          "id": "6:7151162725843014034",
+          "name": "createTime"
+        }
+      ],
+      "relations": []
     }
   ],
-  "lastEntityId": "1:9207008371457938863",
+  "lastEntityId": "2:6407144915364968380",
   "lastIndexId": "0:0",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",
@@ -32,7 +60,9 @@
   "modelVersionParserMinimum": 4,
   "retiredEntityUids": [],
   "retiredIndexUids": [],
-  "retiredPropertyUids": [],
+  "retiredPropertyUids": [
+    2082747424723190676
+  ],
   "retiredRelationUids": [],
   "version": 1
 }

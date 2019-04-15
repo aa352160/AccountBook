@@ -25,9 +25,9 @@
         </activity>
         <activity android:name=".activity.EditUserSettingActivity" />
         <activity android:name=".activity.ExpendActivity" />
-        <activity android:name=".activity.AddPlanTypeActivity" >
-
-        </activity>
+        <activity android:name=".activity.AddPlanTypeActivity" />
+        <activity android:name=".activity.PlanTypeDetailActivity" />
+        <activity android:name=".activity.AddPlanItemActivity" />
         <activity android:name=".activity.PlanTypeListActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

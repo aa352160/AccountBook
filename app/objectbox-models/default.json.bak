@@ -5,7 +5,7 @@
   "entities": [
     {
       "id": "1:9207008371457938863",
-      "lastPropertyId": "2:3134064393616601524",
+      "lastPropertyId": "3:5795697098569889636",
       "name": "PlanTypeB",
       "properties": [
         {
@@ -15,12 +15,44 @@
         {
           "id": "2:3134064393616601524",
           "name": "name"
+        },
+        {
+          "id": "3:5795697098569889636",
+          "name": "dailyMoney"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:6407144915364968380",
+      "lastPropertyId": "5:2082747424723190676",
+      "name": "PlanItemB",
+      "properties": [
+        {
+          "id": "1:5718099847180862989",
+          "name": "id"
+        },
+        {
+          "id": "2:1054770328373461264",
+          "name": "typeId"
+        },
+        {
+          "id": "3:6170652253079403652",
+          "name": "spendMoney"
+        },
+        {
+          "id": "4:3835658343109529262",
+          "name": "remark"
+        },
+        {
+          "id": "5:2082747424723190676",
+          "name": "time"
         }
       ],
       "relations": []
     }
   ],
-  "lastEntityId": "1:9207008371457938863",
+  "lastEntityId": "2:6407144915364968380",
   "lastIndexId": "0:0",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",

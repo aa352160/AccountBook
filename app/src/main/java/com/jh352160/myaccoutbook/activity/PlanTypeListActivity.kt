@@ -3,18 +3,14 @@ package com.jh352160.myaccoutbook.activity
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import com.jh352160.myaccoutbook.R
 import com.jh352160.myaccoutbook.adapter.PlanTypeListAdapter
 import com.jh352160.myaccoutbook.bean.PlanTypeB
-import com.jh352160.myaccoutbook.bean.PlanTypeB_
 import com.jh352160.myaccoutbook.database.DataBoxStoreFactory
 import com.jh352160.myaccoutbook.util.Const
 import kotlinx.android.synthetic.main.activity_plan_type_list.*
-import javax.xml.datatype.DatatypeFactory
 
 /**
  * Created by jh352160 on 2019/4/8.
@@ -34,10 +30,8 @@ class PlanTypeListActivity: AppCompatActivity(){
     }
 
     private fun refreshList(){
-        val planTypeList = DataBoxStoreFactory.boxStore.boxFor(PlanTypeB::class.java).all
-
         recycler_view.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        recycler_view.adapter = PlanTypeListAdapter(planTypeList as ArrayList<PlanTypeB>)
+        recycler_view.adapter = PlanTypeListAdapter(planTypeBox.all as ArrayList<PlanTypeB>)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
