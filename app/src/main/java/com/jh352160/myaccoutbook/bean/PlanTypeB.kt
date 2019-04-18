@@ -12,4 +12,5 @@ class PlanTypeB{
     @Id var id = 0L
     var name = ""
     var dailyMoney = ""
+    var residualMoney = ""
 }

@@ -10,18 +10,23 @@ import com.jh352160.myaccoutbook.adapter.PlanTypeListAdapter
 import com.jh352160.myaccoutbook.bean.PlanTypeB
 import com.jh352160.myaccoutbook.database.DataBoxStoreFactory
 import com.jh352160.myaccoutbook.util.Const
+import com.jh352160.myaccoutbook.util.getStringToSP
+import com.jh352160.myaccoutbook.util.saveStringToSP
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_plan_type_list.*
 
 /**
  * Created by jh352160 on 2019/4/8.
  */
 class PlanTypeListActivity: AppCompatActivity(){
+    private var diffDay = 0 // 距离上次使用间隔天数
     private val planTypeBox by lazy { DataBoxStoreFactory.boxStore.boxFor(PlanTypeB::class.java) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_plan_type_list)
 
+        initData()
         refreshList()
 
         iv_add_plan_type.setOnClickListener {
@@ -29,9 +34,21 @@ class PlanTypeListActivity: AppCompatActivity(){
         }
     }
 
+    private fun initData() {
+        val lastTimeDay = getStringToSP("lastTimeDay")!!
+
+        //需要补上8个小时来匹配北京时间
+        val currentDay = (System.currentTimeMillis() + 8 * 1000 * 60 * 60) / 1000 / 60 / 60 / 24
+        if (lastTimeDay != "") {
+            diffDay = currentDay.toInt() - lastTimeDay.toInt()
+        }
+
+        saveStringToSP("lastTimeDay", "$currentDay")
+    }
+
     private fun refreshList(){
         recycler_view.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        recycler_view.adapter = PlanTypeListAdapter(planTypeBox.all as ArrayList<PlanTypeB>)
+        recycler_view.adapter = PlanTypeListAdapter(planTypeBox.all as ArrayList<PlanTypeB>, diffDay)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
