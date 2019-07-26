@@ -5,7 +5,7 @@
   "entities": [
     {
       "id": "1:9207008371457938863",
-      "lastPropertyId": "3:5795697098569889636",
+      "lastPropertyId": "4:7319481066195268341",
       "name": "PlanTypeB",
       "properties": [
         {
@@ -19,6 +19,10 @@
         {
           "id": "3:5795697098569889636",
           "name": "dailyMoney"
+        },
+        {
+          "id": "4:7319481066195268341",
+          "name": "residualMoney"
         }
       ],
       "relations": []

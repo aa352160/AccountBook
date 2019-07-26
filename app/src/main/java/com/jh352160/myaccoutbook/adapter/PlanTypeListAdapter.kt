@@ -26,6 +26,7 @@ class PlanTypeListAdapter(val datas: ArrayList<PlanTypeB>, val diffDay: Int) : R
             setOnClickListener { context.startActivity(Intent(context, PlanTypeDetailActivity::class.java).apply {
                 putExtra("typeId", item.id)
             }) }
+            item.residualMoney = if (item.residualMoney == "") "0" else item.residualMoney
             val currentMoney = item.residualMoney.toInt() + (diffDay * item.dailyMoney.toInt())
             tv_residual_money.text = "剩余金额：${currentMoney}"
         }

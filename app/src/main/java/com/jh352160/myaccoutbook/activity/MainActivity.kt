@@ -29,9 +29,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        initData()
+        initData()
 //        initDrawer()
-//        initClick()
+        initClick()
+        HashMap<Any, Any>()
     }
 
 //    private fun initDrawer() {

@@ -47,8 +47,11 @@ class PlanTypeListActivity: AppCompatActivity(){
     }
 
     private fun refreshList(){
+        var dataList = planTypeBox.all
+        if (dataList.size == 0){ dataList = arrayListOf<PlanTypeB>() }
+
         recycler_view.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        recycler_view.adapter = PlanTypeListAdapter(planTypeBox.all as ArrayList<PlanTypeB>, diffDay)
+        recycler_view.adapter = PlanTypeListAdapter(dataList as ArrayList<PlanTypeB>, diffDay)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

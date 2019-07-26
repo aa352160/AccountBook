@@ -12,8 +12,8 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         DataBoxStoreFactory.init(this)
-        if (BuildConfig.DEBUG){
-            AndroidObjectBrowser(DataBoxStoreFactory.boxStore).start(this)
-        }
+//        if (BuildConfig.DEBUG){
+//            AndroidObjectBrowser(DataBoxStoreFactory.boxStore).start(this)
+//        }
     }
 }
